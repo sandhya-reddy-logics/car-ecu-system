@@ -2,6 +2,7 @@
 build/*.o
 build/*.d
 build/car_ecu_app
+build/ecu_process_manager
 
 # Logs
 logs/*.log

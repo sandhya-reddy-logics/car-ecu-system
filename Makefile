@@ -1,28 +1,30 @@
-CC = gcc
-CFLAGS = -Wall -Wextra -Iinclude -MMD -MP
-TARGET = build/car_ecu_app
+CC=gcc
+CFLAGS= -Wall -Wextra -Iinclude -MMD -MP
+TARGET= build/car_ecu_app
 
-OBJECTS = build/main.o \
-          build/engine_ecu.o \
-          build/brake_ecu.o \
-          build/body_ecu.o \
-          build/hvac_ecu.o \
-          build/infotainment_ecu.o \
-	  build/logger.o
+OBJECTS= build/main.o\
+	 build/engine_ecu.o\
+	 build/brake_ecu.o\
+	 build/body_ecu.o\
+	 build/hvac_ecu.o\
+	 build/infotainment_ecu.o\
+	 build/logger.o
 
-.PHONY: all clean rebuild
+.PHONY: all source process clean rebuild
 
-all: $(TARGET)
+all: source process
 
-$(TARGET): $(OBJECTS)
-	$(CC) $(OBJECTS) -o $(TARGET)
+source:
+	$(MAKE) -C source
 
-build/%.o: source/%.c
-	$(CC) $(CFLAGS) -c $< -o $@
-
--include $(OBJECTS:.o=.d)
+process:
+	$(MAKE) -C process
 
 clean:
-	rm -f build/*.o build/*.d $(TARGET)
+	$(MAKE) -C source clean
+	$(MAKE) -C process clean
 
 rebuild: clean all
+
+
+
