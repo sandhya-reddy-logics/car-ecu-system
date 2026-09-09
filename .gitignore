@@ -1,0 +1,13 @@
+# Build files
+build/*.o
+build/*.d
+build/car_ecu_app
+
+# Logs
+logs/*.log
+
+# Temporary files
+*.tmp
+*.swp
+*~
+*.gch
