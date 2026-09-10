@@ -1,4 +1,4 @@
-# Automotive ECU Simulation System
+# ECU Simulation System
 
 ## Overview
 
