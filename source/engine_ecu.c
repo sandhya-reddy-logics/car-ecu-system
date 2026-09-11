@@ -18,7 +18,7 @@ void engine_update(void)
 {
 	if(engine_running)
 	{
-		engine_rpm=100;
+		engine_rpm=+100;
 		if(engine_rpm>3000)
 		engine_rpm=1500;
 	}

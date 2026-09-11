@@ -8,7 +8,7 @@
 
 static void display_vehicle_status(void)
 {
-   engine_print_status();
+    engine_print_status();
     brake_print_status();
     body_print_status();
     hvac_print_status();
@@ -48,17 +48,7 @@ int main(void)
         printf("3. Exit\n");
         printf("Enter your choice: ");
 
-        if (scanf("%d", &choice) != 1)
-        {
-            printf("Invalid input. Please enter a number.\n");
-
-            while (getchar() != '\n')
-            {
-                /* Clear invalid input */
-            }
-
-            continue;
-        }
+        scanf("%d",&choice);
 
         switch (choice)
         {
